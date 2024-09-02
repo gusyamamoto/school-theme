@@ -176,3 +176,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//Change excerpt length to 20 words
+function fwd_excerpt_length( $length ) {
+	return 20;
+	}
+	add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
