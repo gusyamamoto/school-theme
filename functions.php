@@ -49,6 +49,7 @@ function school_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
+			'header' => esc_html__( 'Header', 'fwd' ),
 			'menu-1' => esc_html__( 'Primary', 'school-theme' ),
 		)
 	);
