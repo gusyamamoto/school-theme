@@ -46,10 +46,14 @@ function school_theme_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	// add_theme_support( 'menus' );
+
+	add_theme_support( 'align-wide' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'header' => esc_html__( 'Header', 'fwd' ),
+			'header-menu' => esc_html__( 'Header Menu', 'school-theme' ),
 			'menu-1' => esc_html__( 'Primary', 'school-theme' ),
 		)
 	);
@@ -169,6 +173,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Custom Post Types and Taxonomies.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 /**
  * Load Jetpack compatibility file.
