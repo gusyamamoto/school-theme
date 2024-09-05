@@ -77,6 +77,6 @@ function fwd_register_taxonomies() {
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'staff-categories' ),
     );
-    register_taxonomy( 'school-theme-work-category', array( 'school-theme-work' ), $args );
+    register_taxonomy( 'school-theme-staff-category', array( 'school-theme-staff' ), $args );
 }
 add_action( 'init', 'fwd_register_taxonomies');
