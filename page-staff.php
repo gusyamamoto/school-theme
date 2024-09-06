@@ -84,6 +84,15 @@ get_header();
 			</section>
 				
 			<section class="staff-fac">
+				<?php
+					if ( function_exists( 'get_field' ) ) {
+						if ( get_field( 'staff_type_b' ) ) {
+							echo '<h2>';
+							the_field( 'staff_type_b' );
+							echo '</h2>';
+						}
+					}
+				?>
 				<div class="staff-fac-left">
 					<?php
 					if ( function_exists( 'get_field' ) ) {
