@@ -12,6 +12,14 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<nav>
+			<a href=""></a>
+		</nav>
+		<section></section>
+		<nav></nav>
+
+
+
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'school-theme' ) ); ?>">
 				<?php
