@@ -164,10 +164,15 @@ add_action('admin_menu', 'remove_comments_menu');
 
 //Change excerpt length to 20 words
 function fwd_excerpt_length( $length ) {
-	return 20;
+	return 25;
 	}
 	add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
-	
+
+// Function to customize the "Read more about the student…" text (ChatGPT)
+function fwd_excerpt_more( $more ) {
+    return '... <a href="' . get_permalink() . '">Read more about the student…</a>';
+}
+add_filter( 'excerpt_more', 'fwd_excerpt_more' );	
 
 /**
  * Implement the Custom Header feature.

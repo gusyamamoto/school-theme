@@ -1,5 +1,5 @@
 <?php
-function fwd_register_custom_post_types() {
+function school_theme_register_custom_post_types() {
 
     $labels = array(
         'name'               => _x( 'Staff', 'post type general name' ),
@@ -88,7 +88,7 @@ function fwd_register_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 6,
         'menu_icon'          => 'dashicons-welcome-learn-more',
-        'supports'           => array('title','editor'),
+        'supports'           => array('title','editor', 'thumbnail'),
         'template'           => array(
             array('core/paragraph', array(
                 'placeholder' => 'Short Biography',
@@ -106,10 +106,10 @@ function fwd_register_custom_post_types() {
     register_post_type('school-theme-student', $args);
 
 }
-add_action( 'init', 'fwd_register_custom_post_types' );
+add_action( 'init', 'school_theme_register_custom_post_types' );
 
 
-function fwd_register_taxonomies() {
+function school_theme_register_taxonomies() {
     // Add Staff Category taxonomy
     $labels = array(
         'name'              => _x( 'Staff Categories', 'taxonomy general name' ),
@@ -138,7 +138,7 @@ function fwd_register_taxonomies() {
     );
     register_taxonomy( 'school-theme-staff-category', array( 'school-theme-staff' ), $args );
 
-    //Add Students Taxonomy
+    //Add Students Category Taxonomy
     $labels = array(
         'name'              => _x( 'Students Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Student Category', 'taxonomy singular name' ),
@@ -164,13 +164,13 @@ function fwd_register_taxonomies() {
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'students-categories' ),
     );
-    register_taxonomy( 'fwd_register_custom_post_types', array( 'school-theme-student' ), $args );
+    register_taxonomy( 'school-theme-student-category', array( 'school-theme-student' ), $args );
 
 }
-add_action( 'init', 'fwd_register_taxonomies');
+add_action( 'init', 'school_theme_register_taxonomies');
 
 
-function school_change_title_text( $title ){
+function school_theme_change_title_text( $title ){
     $screen = get_current_screen();
   
     if  ( 'school-theme-student' == $screen->post_type ) {
@@ -180,4 +180,4 @@ function school_change_title_text( $title ){
     return $title;
 }
   
-add_filter( 'enter_title_here', 'school_change_title_text' );
+add_filter( 'enter_title_here', 'school_theme_change_title_text' );
