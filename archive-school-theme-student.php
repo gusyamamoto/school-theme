@@ -47,7 +47,7 @@ get_header();
 						</a>
 							<?php the_post_thumbnail( 'large' ); ?>
 						<?php the_excerpt(  ); ?>
-						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category', '', ', ', '' ); ?></p>
+						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category'); ?></p>
 					</article>
 					<?php
 				}
@@ -82,7 +82,7 @@ get_header();
 						</a>
 						<?php the_post_thumbnail( 'large' ); ?>
 						<?php the_excerpt(  ); ?>
-						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category', '', ', ', '' ); ?></p>
+						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category'); ?></p>
 					</article>
 					<?php
 				}
