@@ -168,6 +168,29 @@ function school_theme_scripts()
 }
 add_action('wp_enqueue_scripts', 'school_theme_scripts');
 
+
+// Hiding Comment in the backend
+
+function remove_comments_menu()
+{
+	remove_menu_page('edit-comments.php'); // Remove Comments menu
+}
+add_action('admin_menu', 'remove_comments_menu');
+
+//Change excerpt length to 20 words
+function fwd_excerpt_length($length)
+{
+	return 25;
+}
+add_filter('excerpt_length', 'fwd_excerpt_length', 999);
+
+// Function to customize the "Read more about the student…" text (ChatGPT)
+function fwd_excerpt_more($more)
+{
+	return '... <a href="' . get_permalink() . '">Read more about the student…</a>';
+}
+add_filter('excerpt_more', 'fwd_excerpt_more');
+
 /**
  * Implement the Custom Header feature.
  */
@@ -203,6 +226,6 @@ if (defined('JETPACK__VERSION')) {
 //Change excerpt length to 20 words
 function fwd_excerpt_length($length)
 {
-	return 25;
+	return 20;
 }
 add_filter('excerpt_length', 'fwd_excerpt_length', 999);
