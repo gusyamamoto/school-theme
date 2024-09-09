@@ -47,6 +47,7 @@ get_header();
 						</a>
 							<?php the_post_thumbnail( 'large' ); ?>
 						<?php the_excerpt(  ); ?>
+						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category', '', ', ', '' ); ?></p>
 					</article>
 					<?php
 				}
@@ -79,8 +80,9 @@ get_header();
 						<a href="<?php the_permalink( ); ?>">
 							<h2><?php the_title(  ); ?></h2>
 						</a>
-							<?php the_post_thumbnail( 'large' ); ?>
+						<?php the_post_thumbnail( 'large' ); ?>
 						<?php the_excerpt(  ); ?>
+						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category', '', ', ', '' ); ?></p>
 					</article>
 					<?php
 				}
@@ -101,5 +103,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
