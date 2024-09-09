@@ -11,32 +11,38 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<nav>
-			<a href=""></a>
-		</nav>
-		<section></section>
-		<nav></nav>
+<footer id="colophon" class="site-footer">
+	<nav>
+		<a href=""></a>
+	</nav>
+	<section></section>
+	<nav></nav>
 
 
 
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'school-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'school-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="https://ghyamamoto.com/school">Gustavo & Laura</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<div class="site-info">
+		<a href="<?php echo esc_url(__('https://wordpress.org/', 'school-theme')); ?>">
+
+		</a>
+
+
+		<div class="footer-credits">
+			<p>Created by <a href="http://ghyamamoto.com/school/" target="_blank" rel="noopener noreferrer">Gustavo and
+					Laura</a>
+			</p>
+			<p>Photos courtesy of <a href="http://burst.shopify.com" target="_blank" rel="noopener noreferrer">Burst</a>
+			</p>
+		</div>
+
+
+
+
+	</div><!-- .site-info -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
