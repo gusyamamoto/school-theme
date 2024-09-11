@@ -58,6 +58,8 @@ function school_theme_setup() {
 		array(
 			'header-menu' => esc_html__( 'Header Menu', 'school-theme' ),
 			'menu-1' => esc_html__( 'Primary', 'school-theme' ),
+			'footer-left' => esc_html__( 'Footer - Left Side', 'school-theme' ),
+			'footer-right' => esc_html__( 'Footer - Right Side', 'school-theme' ),
 		)
 	);
 

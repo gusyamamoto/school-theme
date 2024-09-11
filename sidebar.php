@@ -10,6 +10,10 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+if ( ! is_home() ) {
+    return; // Do not display the sidebar if it's not the blog page
+}
 ?>
 
 <aside id="secondary" class="widget-area">
