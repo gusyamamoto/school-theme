@@ -51,17 +51,14 @@ function school_theme_setup()
 
 	add_theme_support('align-wide');
 
-	// custom image crops added
-
-	add_image_size('new-image-crop', 200, 300, true);
+	// Cropping to Recent News in the Home Page
+	add_image_size('recent-news-home', 300, 200, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'header-menu' => esc_html__('Header Menu', 'school-theme'),
 			'menu-1' => esc_html__('Primary', 'school-theme'),
-			'footer-left' => esc_html__('Footer - Left Side', 'fwd'),
-			'footer-right' => esc_html__('Footer - Right Side', 'fwd'),
 		)
 	);
 
