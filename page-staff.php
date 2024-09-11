@@ -17,141 +17,85 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-
 		<?php
 		while ( have_posts() ) :
-			the_post();			
+			the_post();
 		?>	
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			</header><!-- .entry-header -->
 
-			<section class="staff-intro">
-				<?php
-				if ( function_exists( 'get_field' ) ) {
-					if ( get_field( 'top_section' ) ) {
-						the_field( 'top_section' );
-					}
-				}
-				?>				
-			</section>
-
-			<section class="staff-adm">
-				<?php
-				if ( function_exists( 'get_field' ) ) {
-					if ( get_field( 'staff_type_a' ) ) {
-						echo '<h2>';
-						the_field( 'staff_type_a' );
-						echo '</h2>';
-					}
-				}
-				?>
-
-				<div class="staff-adm-left">
-				<?php
-				if ( function_exists( 'get_field' ) ) {
-					if ( get_field( 'staff_type_a_1' ) ) {
-						echo '<h3>';
-						the_field( 'staff_type_a_1' );
-						echo '</h3>';
-					}
-					if ( get_field( 'staff_type_a_1_description' ) ) {
-						echo '<p>';
-						the_field( 'staff_type_a_1_description' );
-						echo '</p>';
-					}
-				}
-				?>
-				</div>
-				
-				<div class="staff-adm-right">
-				<?php
-				if ( function_exists( 'get_field' ) ) {
-					if ( get_field( 'staff_type_a_2' ) ) {
-						echo '<h3>';
-						the_field( 'staff_type_a_2' );
-						echo '</h3>';
-					}
-					if ( get_field( 'staff_type_a_2_description' ) ) {
-						echo '<p>';
-						the_field( 'staff_type_a_2_description' );
-						echo '</p>';
-					}
-				}
-				?>
-				</div>
-			</section>
-				
-			<section class="staff-fac">
-				<?php
-					if ( function_exists( 'get_field' ) ) {
-						if ( get_field( 'staff_type_b' ) ) {
-							echo '<h2>';
-							the_field( 'staff_type_b' );
-							echo '</h2>';
-						}
-					}
-				?>
-				<div class="staff-fac-left">
-					<?php
-					if ( function_exists( 'get_field' ) ) {
-						if ( get_field( 'staff_type_b_1' ) ) {
-							echo '<h3>';
-							the_field( 'staff_type_b_1' );
-							echo '</h3>';
-						}
-						if ( get_field( 'staff_type_b_1_description' ) ) {
-							echo '<p>';
-							the_field( 'staff_type_b_1_description' );
-							echo '</p>';
-						}
-						if ( get_field( 'staff_type_b_1_courses' ) ) {
-							echo '<p>';
-							the_field( 'staff_type_b_1_courses' );
-							echo '</p>';
-						}
-						if ( get_field( 'staff_type_b_1_site' ) ) {
-							echo '<a href="https://google.com" target="blank">';
-							the_field( 'staff_type_b_1_site' );
-							echo '</a>';
-						}
-					}
-					?>
-				</div>
-				<div class="staff-fac-right">
-					<?php
-					if ( function_exists( 'get_field' ) ) {
-							if ( get_field( 'staff_type_b_2' ) ) {
-								echo '<h3>';
-								the_field( 'staff_type_b_2' );
-								echo '</h3>';
-							}
-							if ( get_field( 'staff_type_b_2_description' ) ) {
-								echo '<p>';
-								the_field( 'staff_type_b_2_description' );
-								echo '</p>';
-							}
-							if ( get_field( 'staff_type_b_2_courses' ) ) {
-								echo '<p>';
-								the_field( 'staff_type_b_2_courses' );
-								echo '</p>';
-							}
-							if ( get_field( 'staff_type_b_2_site' ) ) {
-								echo '<a href="https://google.com" target="blank">';
-								the_field( 'staff_type_b_2_site' );
-								echo '</a>';
-							}
-						}
-						?>
-				</div>
-			</section>
-
-			<?php school_theme_post_thumbnail(); ?>
+			
 
 			<div class="entry-content">
 				<?php
 				the_content();
+
+				$terms = get_terms( 
+					array(
+						'taxonomy' => 'school-theme-staff-category',
+					) 
+				);
+		
+				if ( $terms && ! is_wp_error( $terms ) ) {
+					foreach ( $terms as $term ) {
+						
+						$args = array(
+							'post_type'      => 'school-theme-staff',
+							'posts_per_page' => -1,
+							'orderby'        => 'title',
+							'order'          => 'ASC',
+							'tax_query'      => array (
+								array (
+									'taxonomy' => 'school-theme-staff-category',
+									'field'    => 'slug',
+									'terms'    => $term->slug
+								)
+							)
+						);
+						$query = new WP_Query( $args );
+						
+						?>
+						<h2><?php echo esc_html( $term->name ); ?></h2>
+						<?php
+						 
+						if ( $query->have_posts() ) : ?>
+						<article>
+							<?php
+							while ( $query->have_posts() ) :
+								$query->the_post(); 
+								?>
+								<article id='<?php the_ID(); ?>'>
+									<h3><?php the_title(); ?></h3>
+									<?php
+									if (get_field('biography')) { ?>
+										<p><?php the_field('biography'); ?></p>
+										<?php
+									} else {
+										echo '<p>No biography available.</p>';
+									};
+
+									if (get_field('courses')) { ?>
+										<p>Courses: <?php the_field('courses'); ?></p>
+										<?php									
+									};
+
+									if (get_field('website')) { ?>
+										<a href="<?php the_field('website'); ?>">Instructor Website</a>
+										<?php									
+									};
+
+									?>											
+								</article>
+								<?php
+							endwhile;
+							wp_reset_postdata();
+							?>
+						</article>
+						<?php endif;
+					}
+				}
 
 				wp_link_pages(
 					array(

@@ -50,6 +50,9 @@ function school_theme_setup() {
 
 	add_theme_support( 'align-wide' );
 
+	// Cropping to Recent News in the Home Page
+	add_image_size( 'recent-news-home', 300, 200, true ); 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -173,6 +176,15 @@ function fwd_excerpt_more( $more ) {
     return '... <a href="' . get_permalink() . '">Read more about the student…</a>';
 }
 add_filter( 'excerpt_more', 'fwd_excerpt_more' );	
+
+add_filter( 'get_the_archive_title', function( $title ) {
+    if ( is_post_type_archive( 'school-theme-student' ) ) {
+        // Remove the "Archive: " prefix from the title
+        $title = post_type_archive_title( '', false );
+    }
+    return $title;
+});
+
 
 /**
  * Implement the Custom Header feature.
