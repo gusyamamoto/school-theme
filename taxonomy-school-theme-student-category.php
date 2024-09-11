@@ -15,8 +15,8 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1><?php echo single_term_title()('', false); ?><h1>
 				<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
@@ -31,7 +31,7 @@ get_header();
 						<h2><?php the_title(); ?></h2>
 						<?php the_post_thumbnail('large')?>
 					</a>
-					<?php the_content(); // Display the content ?>
+					<?php the_content();?>
 				</article>
 			<?php
 			endwhile;

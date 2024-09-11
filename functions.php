@@ -50,11 +50,16 @@ function school_theme_setup() {
 
 	add_theme_support( 'align-wide' );
 
+	// Cropping to Recent News in the Home Page
+	add_image_size( 'recent-news-home', 300, 200, true ); 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'header-menu' => esc_html__( 'Header Menu', 'school-theme' ),
 			'menu-1' => esc_html__( 'Primary', 'school-theme' ),
+			'footer-left' => esc_html__( 'Footer - Left Side', 'school-theme' ),
+			'footer-right' => esc_html__( 'Footer - Right Side', 'school-theme' ),
 		)
 	);
 
@@ -143,6 +148,13 @@ add_action( 'widgets_init', 'school_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function school_theme_scripts() {
+	wp_enqueue_style( 
+		'school-theme-googlefonts', 
+		'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+		array(),
+		null // Set null if loading multiple Google Fonts from their CDN
+	);
+
 	wp_enqueue_style( 'school-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
 
@@ -173,6 +185,41 @@ function fwd_excerpt_more( $more ) {
     return '... <a href="' . get_permalink() . '">Read more about the student…</a>';
 }
 add_filter( 'excerpt_more', 'fwd_excerpt_more' );	
+
+//Function to change the Taxonomy title (ChatGPT)
+function modify_taxonomy_title( $title ) {
+    if ( is_tax( 'school-theme-student-category' ) ) {
+        $term = get_queried_object();
+        $title = $term->name . ' Student';
+    }
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'modify_taxonomy_title' );
+
+
+add_filter( 'get_the_archive_title', function( $title ) {
+    if ( is_post_type_archive( 'school-theme-student' ) ) {
+        // Remove the "Archive: " prefix from the title
+        $title = post_type_archive_title( '', false );
+    }
+    return $title;
+});
+
+//AOS enqueue
+
+function enqueue_aos_scripts() {
+    // Enqueue AOS CSS
+    wp_enqueue_style( 'aos-css', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css' );
+
+    // Enqueue AOS JavaScript
+    wp_enqueue_script( 'aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js', array(), null, true );
+
+    // Initialize AOS
+    wp_add_inline_script( 'aos-js', 'AOS.init();' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_aos_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.

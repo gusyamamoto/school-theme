@@ -16,12 +16,33 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 			?>
-				<section class="home-intro"></section>
-				<section class="home-block-left"></section>
-				<section class="home-block-left"></section>
-				<section class="home-image-full-width"></section>
-				<section class="paragraph"></section>
-				<section class="home-recent-news"></section>
+
+<div class="home-news-wrap">
+				<?php
+				$args = array( 
+					'post_type'      => 'post',
+					'posts_per_page' => 3,
+						
+					
+				);
+				$blog_query = new WP_Query( $args );
+				if ( $blog_query -> have_posts() ) {
+					while ( $blog_query -> have_posts() ) {
+						$blog_query -> the_post();
+						?>
+						<article class="home-recent-news">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail( 'recent-news-home' ) ?>
+                				<h3><?php the_title(); ?></h3>
+            				</a>
+						</article>
+						<?php
+					}
+					wp_reset_postdata();
+				}
+				?>
+				</div>
+
 			<?php
 		endwhile; // End of the loop.
 		?>
@@ -29,5 +50,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
