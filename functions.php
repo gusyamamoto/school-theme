@@ -148,6 +148,13 @@ add_action( 'widgets_init', 'school_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function school_theme_scripts() {
+	wp_enqueue_style( 
+		'school-theme-googlefonts', 
+		'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+		array(),
+		null // Set null if loading multiple Google Fonts from their CDN
+	);
+
 	wp_enqueue_style( 'school-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
 
@@ -178,6 +185,17 @@ function fwd_excerpt_more( $more ) {
     return '... <a href="' . get_permalink() . '">Read more about the student…</a>';
 }
 add_filter( 'excerpt_more', 'fwd_excerpt_more' );	
+
+//Function to change the Taxonomy title (ChatGPT)
+function modify_taxonomy_title( $title ) {
+    if ( is_tax( 'school-theme-student-category' ) ) {
+        $term = get_queried_object();
+        $title = $term->name . ' Student';
+    }
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'modify_taxonomy_title' );
+
 
 add_filter( 'get_the_archive_title', function( $title ) {
     if ( is_post_type_archive( 'school-theme-student' ) ) {
