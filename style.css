@@ -389,7 +389,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Open Sans", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -424,7 +424,7 @@ address {
 
 pre {
 	background: #eee;
-	font-family: "Courier 10 Pitch", courier, monospace;
+	font-family: "Open Sans", "Courier 10 Pitch", courier, monospace;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -436,7 +436,7 @@ code,
 kbd,
 tt,
 var {
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: "Open Sans", monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
 abbr,
@@ -459,6 +459,7 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+	font-family: "Open Sans", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 hr {
@@ -475,6 +476,7 @@ ol {
 
 ul {
 	list-style: disc;
+	list-style-type: none;
 }
 
 ol {
@@ -621,14 +623,38 @@ textarea {
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-	display: block;
 	width: 100%;
+	background-color: #000000;
+	display: grid;
+	grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
+	align-items: center;
+	justify-content: space-between;
+	color: #fff;
+}
+.main-navigation .site-title {
+	margin: 0;
+	text-transform: uppercase;
+}
+.main-navigation .site-branding {
+	grid-column: 2;
+}
+.main-navigation .menu-header-menu-container {
+	grid-column: 3;
+	display: flex;
+	justify-content: end;
 }
 .main-navigation ul {
 	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+}
+.main-navigation ul a {
+	padding: 1rem;
+}
+.main-navigation ul a:hover,
+.main-navigation ul a.focus {
+	background-color: #305c9f;
 }
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -642,6 +668,9 @@ textarea {
 	left: -999em;
 	top: 0;
 }
+.main-navigation ul ul li {
+	background-color: #000000;
+}
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
 	display: block;
 	left: auto;
@@ -649,9 +678,14 @@ textarea {
 .main-navigation ul ul a {
 	width: 200px;
 }
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
+	background-color: #305c9f;
+}
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
+	text-decoration: none;
 }
 .main-navigation li {
 	position: relative;
@@ -659,7 +693,19 @@ textarea {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 700;
 }
+.site-branding a {
+	font-size: 1.5rem;
+}
+
+.sub-menu {
+	display: flex;
+	flex-direction: column;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
