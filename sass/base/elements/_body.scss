@@ -11,6 +11,7 @@ body {
 	flex-direction: column;
 	margin: 0 auto;
 	padding: 0 1rem;
+	position: relative;
 }
 
 .wp-image-31 {
@@ -18,15 +19,48 @@ body {
 	padding: -1rem;
 }
 
-.wp-image-36 {
-	width: 100vw;
-	
-	
-}
 
 .wp-block-image.alignfull.size-full {
 	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 }
+
+.wp-image-36 {
+	width: 100%;	
+	display: block;
+}
+
+.home-news-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	article {
+		margin-bottom: 1rem;
+	}
+
+	a {
+		position: relative;
+		
+
+		h3 {
+		 	position: absolute;
+		 	bottom: 0;
+		 	left: 0;
+			z-index: 1;
+			background-color: rgba(255, 255, 255, .8);
+			padding: 1rem;
+			text-align: center;
+			width: 100%;
+			margin-bottom: 0;
+		}
+	}
+}
+
 
 // .site-main {
 // 	display: grid;
