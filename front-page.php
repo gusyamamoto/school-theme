@@ -41,7 +41,11 @@ get_header();
 					wp_reset_postdata();
 				}
 				?>
-				</div>
+	</div>
+	
+	<div class="see-all-news">
+		<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">See All News</a>
+	</div>
 
 			<?php
 		endwhile; // End of the loop.

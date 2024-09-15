@@ -513,6 +513,15 @@ body {
 	margin-bottom: 0;
 }
 
+.see-all-news {
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 3rem;
+}
+.see-all-news a {
+	text-decoration: none;
+}
+
 @media screen and (min-width: 50rem) {
 	.wp-block-group__inner-container {
 		display: flex;
@@ -531,6 +540,11 @@ body {
 	}
 	.home-news-wrap .home-recent-news {
 		margin: 1rem;
+	}
+}
+@media screen and (min-width: 68.75rem) {
+	.home-news-wrap {
+		flex-wrap: nowrap;
 	}
 }
 hr {
