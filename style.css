@@ -994,6 +994,9 @@ textarea {
 	.site-footer .site-info .credit-links-wrapper {
 		margin-right: 4rem;
 	}
+	.menu-footer-right-container ul {
+		text-align: start;
+	}
 }
 /* Media
 --------------------------------------------- */
