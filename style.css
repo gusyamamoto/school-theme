@@ -475,6 +475,14 @@ body {
 	padding: -1rem;
 }
 
+.wp-image-36 {
+	width: 100vw;
+}
+
+.wp-block-image.alignfull.size-full {
+	width: 100vw;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
