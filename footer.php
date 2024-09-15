@@ -16,7 +16,7 @@
     		<?php wp_nav_menu( array( 'theme_location' => 'footer-left') ); ?>
 		</nav>
 		<div class="site-info">
-			<div>
+			<div class="credits-section">
 				<h2>Credits</h2>
 				<?php esc_html_e( 'Created by ', 'school-theme' ); ?><a href="<?php echo esc_url( __( 'https://wp.bcitwebdeveloper.ca/', 'school-theme' ) ); ?>"><?php esc_html_e( 'Beata Kozma & Jonathon Leathers.', 'school-theme' ); ?></a>
 			</div>

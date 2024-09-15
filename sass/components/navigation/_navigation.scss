@@ -7,7 +7,7 @@
 	justify-content: space-between;
 	color: #fff;
 
-	.menu-header-menu-container {
+		.menu-header-menu-container {
 		grid-column: 3;
 		display: flex;
 		justify-content: end;
@@ -99,13 +99,21 @@
 	}
 }
 
+.entry-title {
+	font-weight: 400;
+}
+
 .site-header {
 	display: grid;
     grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
     align-items: center;
     justify-content: space-between;
-	background-color: #000000;
+	background-color: black;
 	height: 3.5rem;
+	position: sticky;
+	top: 0;
+  	overflow: hidden;
+	z-index: 1000;
 	
 	a {
 		color: #fff;
@@ -179,6 +187,7 @@ text-align: center;
 		margin: 0 auto;
 	}
 }
+
 
 
 @media screen and (min-width: 50em) {
