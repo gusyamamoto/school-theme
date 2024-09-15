@@ -7,17 +7,6 @@
 	justify-content: space-between;
 	color: #fff;
 
-	
-	.site-title {
-		margin: 0;
-		text-transform: uppercase;
-		
-	}
-
-	.site-branding {
-		grid-column: 2;
-	}
-
 	.menu-header-menu-container {
 		grid-column: 3;
 		display: flex;
@@ -87,7 +76,6 @@
 
 	li {
 		position: relative;
-
 		&:hover > a,
 		&.focus > a {
 		}
@@ -108,10 +96,33 @@
 	}
 }
 
-.site-branding {
+.site-header {
+	display: grid;
+    grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
+    align-items: center;
+    justify-content: space-between;
+	background-color: #000000;
+	
 	a {
-		font-size: 1.5rem;
+		color: #fff;
+		grid-column: 2;
+		list-style: none;
 	}
+}
+
+.site-title {
+	margin: 0;
+	text-transform: uppercase;
+	padding: 1rem;
+	a {
+		text-decoration: none;
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
+}
+
+.site-branding {
+	grid-column: 2;
 }
 
 .sub-menu {
@@ -125,7 +136,33 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0.3rem;
+	right: 1rem;
+	z-index: 1100;
+	display: block;
+	width: 3.75rem;
+	padding: 1rem;
+	margin: 0;
+	border: none;
+	background: transparent;
+
+	svg path {
+		fill: #fff;
+	}
+}
+
+
+@media screen and (min-width: 50em) {
 
 	.menu-toggle {
 		display: none;

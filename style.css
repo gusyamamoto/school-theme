@@ -462,6 +462,19 @@ body {
 	font-family: "Open Sans", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+.site-main {
+	max-width: 62.5rem;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.wp-image-31 {
+	width: 100%;
+	padding: -1rem;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -631,13 +644,6 @@ textarea {
 	justify-content: space-between;
 	color: #fff;
 }
-.main-navigation .site-title {
-	margin: 0;
-	text-transform: uppercase;
-}
-.main-navigation .site-branding {
-	grid-column: 2;
-}
 .main-navigation .menu-header-menu-container {
 	grid-column: 3;
 	display: flex;
@@ -697,8 +703,32 @@ textarea {
 	font-size: 1rem;
 	font-weight: 700;
 }
-.site-branding a {
-	font-size: 1.5rem;
+.site-header {
+	display: grid;
+	grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #000000;
+}
+.site-header a {
+	color: #fff;
+	grid-column: 2;
+	list-style: none;
+}
+
+.site-title {
+	margin: 0;
+	text-transform: uppercase;
+	padding: 1rem;
+}
+.site-title a {
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+.site-branding {
+	grid-column: 2;
 }
 
 .sub-menu {
@@ -712,7 +742,31 @@ textarea {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0.3rem;
+	right: 1rem;
+	z-index: 1100;
+	display: block;
+	width: 3.75rem;
+	padding: 1rem;
+	margin: 0;
+	border: none;
+	background: transparent;
+}
+.menu-toggle svg path {
+	fill: #fff;
+}
+
+@media screen and (min-width: 50em) {
 	.menu-toggle {
 		display: none;
 	}

@@ -27,7 +27,6 @@
 
 	<header id="masthead" class="site-header">
 		
-		<nav id="site-navigation" class="main-navigation">
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -44,10 +43,16 @@
 			if ( $school_theme_description || is_customize_preview() ) :
 				?>
 				<p class="site-description"><?php echo $school_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+				<?php endif; ?>
 		</div><!-- .site-branding -->
-
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'school-theme' ); ?></button>
+			
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<!-- <?php esc_html_e( 'Primary Menu', 'school-theme' ); ?> -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
+				</svg>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
