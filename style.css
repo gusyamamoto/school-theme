@@ -859,7 +859,7 @@ textarea {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0 0 0;
 }
 
 .updated:not(.published) {
@@ -894,6 +894,43 @@ textarea {
 }
 .widget select {
 	max-width: 100%;
+}
+
+.site-footer {
+	background-color: #333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	justify-content: center;
+}
+.site-footer h2 {
+	text-align: center;
+	font-size: 1.75rem;
+}
+.site-footer ul {
+	margin: 0;
+	padding-left: 0;
+}
+.site-footer svg path {
+	fill: #fff;
+}
+.site-footer svg {
+	padding-top: 1rem;
+}
+.site-footer .site-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #fff;
+}
+.site-footer .site-info a {
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+}
+.site-footer .menu-footer-right-container {
+	text-align: center;
 }
 
 /* Media
