@@ -16,12 +16,14 @@
     		<?php wp_nav_menu( array( 'theme_location' => 'footer-left') ); ?>
 		</nav>
 		<div class="site-info">
-			<div class="credits-section">
-				<h2>Credits</h2>
-				<?php esc_html_e( 'Created by ', 'school-theme' ); ?><a href="<?php echo esc_url( __( 'https://wp.bcitwebdeveloper.ca/', 'school-theme' ) ); ?>"><?php esc_html_e( 'Beata Kozma & Jonathon Leathers.', 'school-theme' ); ?></a>
-			</div>
-			<div>
-				<?php esc_html_e( 'Photos courtesy of ', 'school-theme' ); ?><a href="<?php echo esc_url( __( 'https://www.shopify.com/stock-photos', 'school-theme' ) ); ?>"><?php esc_html_e( 'Burst.', 'school-theme' ); ?></a>
+			<div class="credit-links-wrapper">
+				<div class="credits-section">
+					<h2>Credits</h2>
+					<?php esc_html_e( 'Created by ', 'school-theme' ); ?><a href="<?php echo esc_url( __( 'https://wp.bcitwebdeveloper.ca/', 'school-theme' ) ); ?>"><?php esc_html_e( 'Beata Kozma & Jonathon Leathers.', 'school-theme' ); ?></a>
+				</div>
+				<div>
+					<?php esc_html_e( 'Photos courtesy of ', 'school-theme' ); ?><a href="<?php echo esc_url( __( 'https://www.shopify.com/stock-photos', 'school-theme' ) ); ?>"><?php esc_html_e( 'Burst.', 'school-theme' ); ?></a>
+				</div>
 			</div>
 			
 			
@@ -29,8 +31,6 @@
 			<h2>Links</h2>
     		<?php wp_nav_menu( array( 'theme_location' => 'footer-right') ); ?>
 		</nav>
-
-
 
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
