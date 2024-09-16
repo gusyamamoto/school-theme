@@ -1,5 +1,4 @@
-@use "variables" as *;
-@use "typography" as *;
+@import 'abstracts/abstracts';
 
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.

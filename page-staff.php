@@ -15,7 +15,15 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/wp-content/themesschool-theme/style.css">
+</head>
+
+
+
+	<main id="primary" class="site-main staff-body">
 
 		<?php
 		while ( have_posts() ) :
@@ -26,7 +34,6 @@ get_header();
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			</header><!-- .entry-header -->
 
-			
 
 			<div class="entry-content">
 				<?php
@@ -105,6 +112,7 @@ get_header();
 				);
 				?>
 			</div><!-- .entry-content -->
+			
 
 			<?php if ( get_edit_post_link() ) : ?>
 				<footer class="entry-footer">
