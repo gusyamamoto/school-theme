@@ -953,10 +953,19 @@ textarea {
 .site-footer h2 {
 	text-align: center;
 	font-size: 1.75rem;
+	color: #fff;
+}
+.site-footer a {
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
 }
 .site-footer ul {
 	margin: 0;
 	padding-left: 0;
+}
+.site-footer p {
+	color: #fff;
 }
 .site-footer svg path {
 	fill: #fff;
@@ -964,24 +973,11 @@ textarea {
 .site-footer svg {
 	padding-top: 1rem;
 }
-.site-footer .site-info {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	color: #fff;
-}
-.site-footer .site-info a {
-	color: #fff;
-	font-weight: bold;
-	text-decoration: none;
-	margin-bottom: 1rem;
-}
 .site-footer .menu-footer-right-container {
 	text-align: center;
 }
-.site-footer .credits-section,
-.site-footer .footer-right {
-	margin-bottom: 1rem;
+.site-footer .credit-links-wrapper {
+	text-align: center;
 }
 
 @media screen and (min-width: 62.5rem) {
@@ -990,18 +986,14 @@ textarea {
 		flex-direction: row;
 		justify-content: space-around;
 	}
-	.site-footer .site-info {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-	}
-	.site-footer .site-info .credit-links-wrapper {
-		margin-right: 4rem;
-	}
-	.menu-footer-right-container ul {
-		text-align: start;
+	.site-footer .credit-links-wrapper {
+		text-align: left;
 	}
 }
+.menu-footer-right-container ul {
+	text-align: start;
+}
+
 /* Media
 --------------------------------------------- */
 .page-content .wp-smiley,
