@@ -29,8 +29,8 @@ get_header();
 				<article>
 					<a href="<?php the_permalink(); ?>">
 						<h2><?php the_title(); ?></h2>
-						<?php the_post_thumbnail('large')?>
 					</a>
+					<?php the_post_thumbnail('taxonomy-students')?>
 					<?php the_content();?>
 				</article>
 			<?php

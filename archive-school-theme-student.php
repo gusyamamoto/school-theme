@@ -41,13 +41,15 @@ get_header();
    				while( $query->have_posts() ) {
         			$query->the_post(); 
 					?>
-					<article>
-						<a href="<?php the_permalink( ); ?>">
-							<h2><?php the_title(  ); ?></h2>
-						</a>
-							<?php the_post_thumbnail( 'large' ); ?>
+					<article class="student-wrapper">
+						<h2>
+							<a href="<?php the_permalink( ); ?>">
+								<?php the_title(  ); ?>
+							</a>
+						</h2>
+							<?php the_post_thumbnail( 'recent-news-home' ); ?>
 						<?php the_excerpt(  ); ?>
-						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category'); ?></p>
+						<p class="specialty">Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category'); ?></p>
 					</article>
 					<?php
 				}
@@ -70,19 +72,21 @@ get_header();
 			);
 			$query = new WP_Query( $args );
 			if ( $query->have_posts() ) {
-				?><section class="works-wrapper"><?php
+				?><section class="students-wrapper"><?php
 
 				
    				while( $query->have_posts() ) {
         			$query->the_post(); 
 					?>
 					<article>
-						<a href="<?php the_permalink( ); ?>">
-							<h2><?php the_title(  ); ?></h2>
-						</a>
-						<?php the_post_thumbnail( 'large' ); ?>
+						<h2>
+							<a href="<?php the_permalink( ); ?>">
+								<?php the_title(  ); ?>
+							</a>
+						</h2>
+						<?php the_post_thumbnail( 'recent-news-home' ); ?>
 						<?php the_excerpt(  ); ?>
-						<p>Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category'); ?></p>
+						<p class="specialty">Specialty: <?php the_terms( get_the_ID(), 'school-theme-student-category'); ?></p>
 					</article>
 					<?php
 				}

@@ -21,3 +21,79 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.page-title {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.students-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 18.75rem;
+		h2,
+		.specialty {
+			align-self: flex-start;
+		}
+	}
+}
+
+.wp-block-button__link, 
+.wp-element-button {
+	font-weight: bold;
+}
+
+.wp-block-button, 
+.portfolio-button{
+	a:hover {
+		color: white;
+		text-decoration: underline;
+	}
+	a:visited {
+		color: white;
+	}
+}
+
+.nav-links {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	a{
+		font-weight: bold;
+	}
+}
+
+.attachment-taxonomy-students, 
+.size-taxonomy-students, 
+ {
+	float: right;
+}
+
+@media screen and (min-width: 37.5rem) {
+	.students-wrapper {
+		flex-wrap: wrap;
+		flex-direction: row;
+
+	}
+	.attachment-post-thumbnail,
+	.size-post-thumbnail, 
+	 {
+		// display: inline;
+		float: right;
+		margin-left: 1.5rem;
+	}
+
+	.single-student-img {
+		display: inline;
+		float: right;
+		margin-left: 1.5rem;
+	}
+}

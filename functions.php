@@ -53,6 +53,12 @@ function school_theme_setup() {
 	// Cropping to Recent News in the Home Page
 	add_image_size( 'recent-news-home', 300, 200, true ); 
 
+	// Cropping to single page (student)
+	add_image_size( 'single-student', 300, 257, true ); 
+	
+	// Cropping to archive type student
+	add_image_size( 'taxonomy-students', 200, 300, true ); 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -198,12 +204,13 @@ add_filter( 'get_the_archive_title', 'modify_taxonomy_title' );
 
 
 add_filter( 'get_the_archive_title', function( $title ) {
-    if ( is_post_type_archive( 'school-theme-student' ) ) {
+    if ( is_post_type_archive( 'single-school-theme-student-category' ) ) {
         // Remove the "Archive: " prefix from the title
         $title = post_type_archive_title( '', false );
     }
     return $title;
 });
+
 
 //AOS enqueue
 
