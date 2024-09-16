@@ -23,10 +23,8 @@
 }
 
 .page-title {
-	font-size: 2rem;
 	font-weight: 400;
 }
-
 .students-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -50,7 +48,6 @@
 .wp-element-button {
 	font-weight: bold;
 }
-
 .wp-block-button, 
 .portfolio-button{
 	a:hover {
@@ -61,7 +58,6 @@
 		color: white;
 	}
 }
-
 .nav-links {
 	display: flex;
 	flex-direction: column;
@@ -82,7 +78,6 @@
 	text-align: center;
 	margin: 1rem;
 }
-
 table {
 	border-collapse: collapse;
 	thead tr {
@@ -101,11 +96,22 @@ table {
 		}
 }
 
+.staff-type {
+	text-decoration: underline;
+	margin-top: 4rem;
+}
+.courses-para, .instructor-site {
+	margin: 0;
+}
+.instructor-site {
+	font-weight: bold;
+	margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 37.5rem) {
 	.students-wrapper {
 		flex-wrap: wrap;
 		flex-direction: row;
-
 	}
 	.attachment-post-thumbnail,
 	.size-post-thumbnail {
@@ -113,7 +119,6 @@ table {
 		float: right;
 		margin-left: 1.5rem;
 	}
-
 	.single-student-img {
 		display: inline;
 		float: right;
@@ -125,6 +130,13 @@ table {
 		}
 		th, td {
 			padding: 2.5rem;
+		}
+	}
+	.staff-wrapper {
+		display: flex;		
+		flex-direction: row;
+		gap: 1.8rem;
+		.staff-type-wrapper {
 		}
 	}
 }

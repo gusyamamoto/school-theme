@@ -394,13 +394,19 @@ textarea {
 	line-height: 1.5;
 }
 
-h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
 	clear: both;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
 }
 
 p {
@@ -467,7 +473,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin: 5rem auto 0;
-	padding: 0 1rem;
+	padding: 0 1.5rem;
 	position: relative;
 }
 
@@ -714,6 +720,7 @@ textarea {
 	align-items: center;
 	justify-content: space-between;
 	color: #fff;
+	height: auto;
 }
 .main-navigation .menu-header-menu-container {
 	display: flex;
@@ -726,7 +733,7 @@ textarea {
 	padding-left: 0;
 }
 .main-navigation ul a {
-	padding: 1rem;
+	padding: 1.2rem 1rem;
 }
 .main-navigation ul a:hover,
 .main-navigation ul a.focus {
@@ -788,12 +795,13 @@ textarea {
 	align-items: center;
 	justify-content: space-between;
 	background-color: black;
-	height: 3.5rem;
+	height: auto;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 1000;
+	z-index: 3000;
+	border-top: 3px solid #305c9f;
 }
 .site-header a {
 	color: #fff;
@@ -803,11 +811,11 @@ textarea {
 .site-title {
 	margin: 0;
 	text-transform: uppercase;
-	margin: 0.75rem 1rem;
+	margin: 0.85rem 1rem;
 }
 .site-title a {
 	text-decoration: none;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	font-weight: 700;
 }
 
@@ -832,7 +840,7 @@ textarea {
 
 .menu-toggle {
 	position: absolute;
-	top: 0.3rem;
+	top: 0.5rem;
 	right: 1rem;
 	z-index: 1100;
 	display: block;
@@ -848,7 +856,7 @@ textarea {
 .main-navigation.toggled .menu-header-menu-container {
 	background-color: #000000;
 	position: absolute;
-	top: 3rem;
+	top: 2.8rem;
 	left: 0;
 	right: 0;
 	z-index: 200000;
@@ -925,7 +933,6 @@ textarea {
 }
 
 .page-title {
-	font-size: 2rem;
 	font-weight: 400;
 }
 
@@ -1001,6 +1008,20 @@ table th, table td {
 	padding: 0.5rem;
 }
 
+.staff-type {
+	text-decoration: underline;
+	margin-top: 4rem;
+}
+
+.courses-para, .instructor-site {
+	margin: 0;
+}
+
+.instructor-site {
+	font-weight: bold;
+	margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 37.5rem) {
 	.students-wrapper {
 		flex-wrap: wrap;
@@ -1021,6 +1042,11 @@ table th, table td {
 	}
 	table th, table td {
 		padding: 2.5rem;
+	}
+	.staff-wrapper {
+		display: flex;
+		flex-direction: row;
+		gap: 1.8rem;
 	}
 }
 /* Comments

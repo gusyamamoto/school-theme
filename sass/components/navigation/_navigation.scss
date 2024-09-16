@@ -4,6 +4,7 @@
 	align-items: center;
 	justify-content: space-between;
 	color: #fff;
+	height: auto;
 
 		.menu-header-menu-container {
 		display: flex;
@@ -17,7 +18,7 @@
 		padding-left: 0;
 
 		a {
-			padding: 1rem;
+			padding: 1.2rem 1rem;
 		}
 
 		a:hover,
@@ -104,12 +105,13 @@
 	align-items: center;
     justify-content: space-between;
 	background-color: black;
-	height: 3.5rem;
+	height: auto;
 	position: fixed;
 	top: 0;
   	left: 0;
 	right: 0;
-	z-index: 1000;
+	z-index: 3000;
+	border-top: 3px solid #305c9f;
 	
 	a {
 		color: #fff;
@@ -120,10 +122,10 @@
 .site-title {
 	margin: 0;
 	text-transform: uppercase;
-	margin: .75rem 1rem;
+	margin: .85rem 1rem;
 	a {
 		text-decoration: none;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		font-weight: 700;
 	}
 }
@@ -149,7 +151,7 @@ text-align: center;
 
 .menu-toggle {
 	position: absolute;
-	top: 0.3rem;
+	top: 0.5rem;
 	right: 1rem;
 	z-index: 1100;
 	display: block;
@@ -168,7 +170,7 @@ text-align: center;
 	.menu-header-menu-container {
 		background-color: #000000;
 		position: absolute;
-		top: 3rem;
+		top: 2.8rem;
 		left: 0;
 		right: 0;
 		z-index: 200000;
