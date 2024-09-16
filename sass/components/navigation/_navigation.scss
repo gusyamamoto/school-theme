@@ -1,14 +1,11 @@
 .main-navigation {
 	width: 100%;
 	background-color: #000000;
-	display: grid;
-	grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
 	align-items: center;
 	justify-content: space-between;
 	color: #fff;
 
 		.menu-header-menu-container {
-		grid-column: 3;
 		display: flex;
 		justify-content: end;
 	}
@@ -104,20 +101,18 @@
 }
 
 .site-header {
-	display: grid;
-    grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
-    align-items: center;
+	align-items: center;
     justify-content: space-between;
 	background-color: black;
 	height: 3.5rem;
-	position: sticky;
+	position: fixed;
 	top: 0;
-  	overflow: hidden;
+  	left: 0;
+	right: 0;
 	z-index: 1000;
 	
 	a {
 		color: #fff;
-		grid-column: 2;
 		list-style: none;
 	}
 }
@@ -125,18 +120,13 @@
 .site-title {
 	margin: 0;
 	text-transform: uppercase;
-	
+	margin: .75rem 1rem;
 	a {
 		text-decoration: none;
 		font-size: 1.3rem;
 		font-weight: 700;
 	}
 }
-
-.site-branding {
-	grid-column: 2;
-}
-
 
 .sub-menu {
 	display: flex;
@@ -181,6 +171,7 @@ text-align: center;
 		top: 3rem;
 		left: 0;
 		right: 0;
+		z-index: 200000;
 	}
 
 	ul {
@@ -199,6 +190,20 @@ text-align: center;
 	.main-navigation ul {
 		display: flex;
 	}
+	
+	.site-header {
+		display: grid;
+		flex-direction: row;
+		grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
+		.site-branding, .site-title {
+			grid-column: 2 / 3;
+		}
+		.main-navigation {
+			grid-column: 3 / 4;
+		}
+	}
+
+
 }
 
 .comment-navigation,

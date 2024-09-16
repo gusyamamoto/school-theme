@@ -466,7 +466,7 @@ body {
 	max-width: 62.5rem;
 	display: flex;
 	flex-direction: column;
-	margin: 0 auto;
+	margin: 5rem auto 0;
 	padding: 0 1rem;
 	position: relative;
 }
@@ -710,14 +710,11 @@ textarea {
 .main-navigation {
 	width: 100%;
 	background-color: #000000;
-	display: grid;
-	grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
 	align-items: center;
 	justify-content: space-between;
 	color: #fff;
 }
 .main-navigation .menu-header-menu-container {
-	grid-column: 3;
 	display: flex;
 	justify-content: end;
 }
@@ -787,35 +784,30 @@ textarea {
 }
 
 .site-header {
-	display: grid;
-	grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
 	align-items: center;
 	justify-content: space-between;
 	background-color: black;
 	height: 3.5rem;
-	position: sticky;
+	position: fixed;
 	top: 0;
-	overflow: hidden;
+	left: 0;
+	right: 0;
 	z-index: 1000;
 }
 .site-header a {
 	color: #fff;
-	grid-column: 2;
 	list-style: none;
 }
 
 .site-title {
 	margin: 0;
 	text-transform: uppercase;
+	margin: 0.75rem 1rem;
 }
 .site-title a {
 	text-decoration: none;
 	font-size: 1.3rem;
 	font-weight: 700;
-}
-
-.site-branding {
-	grid-column: 2;
 }
 
 .sub-menu {
@@ -858,6 +850,7 @@ textarea {
 	top: 3rem;
 	left: 0;
 	right: 0;
+	z-index: 200000;
 }
 .main-navigation.toggled ul {
 	margin: 0 auto;
@@ -869,6 +862,17 @@ textarea {
 	}
 	.main-navigation ul {
 		display: flex;
+	}
+	.site-header {
+		display: grid;
+		flex-direction: row;
+		grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
+	}
+	.site-header .site-branding, .site-header .site-title {
+		grid-column: 2/3;
+	}
+	.site-header .main-navigation {
+		grid-column: 3/4;
 	}
 }
 .site-main .comment-navigation,
