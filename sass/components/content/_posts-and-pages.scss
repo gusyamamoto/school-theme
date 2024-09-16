@@ -71,10 +71,34 @@
 	}
 }
 
-.attachment-taxonomy-students, 
-.size-taxonomy-students, 
+.taxonomy-student-img
  {
-	float: right;
+	float: left;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+}
+
+.table-title {
+	text-align: center;
+	margin: 1rem;
+}
+
+table {
+	border-collapse: collapse;
+	thead tr {
+	background-color: #c9c9c9;	
+	}
+	tbody tr:nth-child(even) {
+		background-color: #c9c9c9;
+	}
+	tr {
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+	}
+	th, td {
+			padding: .5rem;
+		}
 }
 
 @media screen and (min-width: 37.5rem) {
@@ -84,8 +108,7 @@
 
 	}
 	.attachment-post-thumbnail,
-	.size-post-thumbnail, 
-	 {
+	.size-post-thumbnail {
 		// display: inline;
 		float: right;
 		margin-left: 1.5rem;
@@ -95,5 +118,13 @@
 		display: inline;
 		float: right;
 		margin-left: 1.5rem;
+	}
+	table {
+		tr {
+			display: table-row;
+		}
+		th, td {
+			padding: 2.5rem;
+		}
 	}
 }

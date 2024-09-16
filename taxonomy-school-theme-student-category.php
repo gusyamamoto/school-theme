@@ -30,7 +30,9 @@ get_header();
 					<a href="<?php the_permalink(); ?>">
 						<h2><?php the_title(); ?></h2>
 					</a>
-					<?php the_post_thumbnail('taxonomy-students')?>
+					<div class="taxonomy-student-img">
+						<?php the_post_thumbnail('taxonomy-students')?>
+					</div>
 					<?php the_content();?>
 				</article>
 			<?php

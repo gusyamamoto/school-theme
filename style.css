@@ -972,9 +972,33 @@ textarea {
 	font-weight: bold;
 }
 
-.attachment-taxonomy-students,
-.size-taxonomy-students {
-	float: right;
+.taxonomy-student-img {
+	float: left;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+}
+
+.table-title {
+	text-align: center;
+	margin: 1rem;
+}
+
+table {
+	border-collapse: collapse;
+}
+table thead tr {
+	background-color: #c9c9c9;
+}
+table tbody tr:nth-child(even) {
+	background-color: #c9c9c9;
+}
+table tr {
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+}
+table th, table td {
+	padding: 0.5rem;
 }
 
 @media screen and (min-width: 37.5rem) {
@@ -991,6 +1015,12 @@ textarea {
 		display: inline;
 		float: right;
 		margin-left: 1.5rem;
+	}
+	table tr {
+		display: table-row;
+	}
+	table th, table td {
+		padding: 2.5rem;
 	}
 }
 /* Comments
@@ -1019,6 +1049,7 @@ textarea {
 	align-items: center;
 	margin: 0 auto;
 	justify-content: center;
+	width: 100%;
 }
 .site-footer h2 {
 	text-align: center;

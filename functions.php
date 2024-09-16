@@ -211,6 +211,14 @@ add_filter( 'get_the_archive_title', function( $title ) {
     return $title;
 });
 
+//Function to delete the word "Archive from Student page
+add_filter( 'get_the_archive_title', function( $title ) {
+    if ( is_post_type_archive( 'school-theme-student' ) ) {
+        // Remove the "Archive: " prefix from the title
+        $title = post_type_archive_title( '', false );
+    }
+    return $title;
+});
 
 //AOS enqueue
 
