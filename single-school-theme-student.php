@@ -15,9 +15,7 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			
-			school_theme_post_thumbnail( 'single-student' );?>
+			the_post_thumbnail( 'single-student' );?>
 
 	<div class="entry-content">
 		<?php
@@ -48,8 +46,8 @@ get_header();
 		
 			the_post_navigation(
 				array(
-					'prev_text' => '</span> <span class="nav-title">%title</span>',
-					'next_text' => '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-title">%title</span>',
 				)
 			);
 

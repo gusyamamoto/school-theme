@@ -1050,6 +1050,11 @@ table th, table td {
 	display: block;
 }
 
+.blog h2 {
+	font-weight: bold;
+	color: #800080;
+}
+
 @media screen and (min-width: 37.5rem) {
 	.students-wrapper {
 		flex-wrap: wrap;
@@ -1135,6 +1140,37 @@ table th, table td {
 	text-align: center;
 }
 
+.widget-area {
+	padding: 2rem;
+}
+.widget-area section {
+	margin: 1rem;
+}
+.widget-area li {
+	list-style-type: disc;
+	font-weight: bold;
+}
+.widget-area .wp-block-search__inside-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.widget-area button {
+	color: white;
+	background-color: #305c9f;
+	padding: 1.5rem;
+}
+.widget-area .wp-block-search__button {
+	margin-left: 0;
+}
+
+@media screen and (min-width: 68rem) {
+	.widget-area {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0 auto;
+	}
+}
 @media screen and (min-width: 62.5rem) {
 	.site-footer {
 		display: flex;
@@ -1144,11 +1180,10 @@ table th, table td {
 	.site-footer .credit-links-wrapper {
 		text-align: left;
 	}
+	.menu-footer-right-container ul {
+		text-align: start;
+	}
 }
-.menu-footer-right-container ul {
-	text-align: start;
-}
-
 /* Media
 --------------------------------------------- */
 .page-content .wp-smiley,

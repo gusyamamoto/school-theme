@@ -56,6 +56,40 @@
 
 }
 
+.widget-area {
+	padding: 2rem;
+	section{
+		margin: 1rem;
+	}
+	li {
+		list-style-type: disc;
+		font-weight: bold;
+	}
+	.wp-block-search__inside-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	button {
+		color: white;
+		background-color: #305c9f;
+		padding: 1.5rem;
+	}
+	.wp-block-search__button {
+		margin-left: 0;
+	}
+	  
+}
+
+@media screen and (min-width: 68rem) {
+	.widget-area {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0 auto;	
+	}
+	
+}
+
 @media screen and (min-width: 62.5rem) {
 	.site-footer {
 		display: flex;
@@ -65,12 +99,12 @@
 		.credit-links-wrapper {
 			text-align: left;
 		}
-		}
 	}
-
+	
 	.menu-footer-right-container {
 		ul {
 			text-align: start;
 		}
 	}
-
+}
+	
