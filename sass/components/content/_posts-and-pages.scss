@@ -108,6 +108,10 @@ table {
 	margin-bottom: 2rem;
 }
 
+.wp-block-group__inner-container {
+	display: block;
+}
+
 @media screen and (min-width: 37.5rem) {
 	.students-wrapper {
 		flex-wrap: wrap;

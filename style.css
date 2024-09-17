@@ -528,13 +528,10 @@ body {
 	text-decoration: none;
 }
 
-@media screen and (min-width: 50rem) {
-	.wp-block-group__inner-container {
-		display: flex;
-	}
-	.wp-block-group__inner-container .wp-block-group__inner-container,
-	.wp-block-group__inner-container .is-layout-constrained,
-	.wp-block-group__inner-container .wp-block-group-is-layout-constrained {
+@media screen and (min-width: 50em) {
+	.wp-block-group__inner-container,
+	.is-layout-constrained,
+	.wp-block-group-is-layout-constrained {
 		display: flex;
 		flex-direction: column;
 	}
@@ -546,6 +543,33 @@ body {
 	}
 	.home-news-wrap .home-recent-news {
 		margin: 1rem;
+	}
+	.lorem-ipsum-wrapper .wp-block-group__inner-container,
+	.lorem-ipsum-wrapper .is-layout-constrained,
+	.lorem-ipsum-wrapper .wp-block-group-is-layout-constrained {
+		display: flex;
+		flex-direction: row;
+	}
+	.lorem-ipsum-wrapper .wp-block-group__inner-container .lorem-home .wp-block-group__inner-container,
+	.lorem-ipsum-wrapper .wp-block-group__inner-container .lorem-home .is-layout-constrained,
+	.lorem-ipsum-wrapper .wp-block-group__inner-container .lorem-home .wp-block-group-is-layout-constrained, .lorem-ipsum-wrapper .wp-block-group__inner-container .ipsum-home .wp-block-group__inner-container,
+	.lorem-ipsum-wrapper .wp-block-group__inner-container .ipsum-home .is-layout-constrained,
+	.lorem-ipsum-wrapper .wp-block-group__inner-container .ipsum-home .wp-block-group-is-layout-constrained,
+	.lorem-ipsum-wrapper .is-layout-constrained .lorem-home .wp-block-group__inner-container,
+	.lorem-ipsum-wrapper .is-layout-constrained .lorem-home .is-layout-constrained,
+	.lorem-ipsum-wrapper .is-layout-constrained .lorem-home .wp-block-group-is-layout-constrained,
+	.lorem-ipsum-wrapper .is-layout-constrained .ipsum-home .wp-block-group__inner-container,
+	.lorem-ipsum-wrapper .is-layout-constrained .ipsum-home .is-layout-constrained,
+	.lorem-ipsum-wrapper .is-layout-constrained .ipsum-home .wp-block-group-is-layout-constrained,
+	.lorem-ipsum-wrapper .wp-block-group-is-layout-constrained .lorem-home .wp-block-group__inner-container,
+	.lorem-ipsum-wrapper .wp-block-group-is-layout-constrained .lorem-home .is-layout-constrained,
+	.lorem-ipsum-wrapper .wp-block-group-is-layout-constrained .lorem-home .wp-block-group-is-layout-constrained,
+	.lorem-ipsum-wrapper .wp-block-group-is-layout-constrained .ipsum-home .wp-block-group__inner-container,
+	.lorem-ipsum-wrapper .wp-block-group-is-layout-constrained .ipsum-home .is-layout-constrained,
+	.lorem-ipsum-wrapper .wp-block-group-is-layout-constrained .ipsum-home .wp-block-group-is-layout-constrained {
+		display: flex;
+		flex-direction: column;
+		margin: 0 1rem;
 	}
 }
 @media screen and (min-width: 68.75rem) {
@@ -1020,6 +1044,10 @@ table th, table td {
 .instructor-site {
 	font-weight: bold;
 	margin-bottom: 2rem;
+}
+
+.wp-block-group__inner-container {
+	display: block;
 }
 
 @media screen and (min-width: 37.5rem) {

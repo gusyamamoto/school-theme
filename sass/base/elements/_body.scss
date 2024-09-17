@@ -1,10 +1,7 @@
-
-
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 	font-family: $font__main;
 }
-
 
 .site-main {
 	max-width: 62.5rem;
@@ -19,7 +16,6 @@ body {
 	width: 100%;
 	padding: -1rem;
 }
-
 
 .wp-block-image.alignfull.size-full {
 	width: 100vw;
@@ -71,18 +67,13 @@ body {
 	}
 }
 
-@media screen and (min-width: 50rem) {
-	.wp-block-group__inner-container {
+@media screen and (min-width: 50em) {
+	.wp-block-group__inner-container,
+	.is-layout-constrained,
+	.wp-block-group-is-layout-constrained {
 		display: flex;
-		
-		.wp-block-group__inner-container,
-		.is-layout-constrained,
-		.wp-block-group-is-layout-constrained {
-			display: flex;
-			flex-direction: column;
-		}
+		flex-direction: column;
 	}
-
 	.home-news-wrap {
 		display: flex;
 		flex-direction: row;
@@ -93,6 +84,23 @@ body {
 			margin: 1rem;
 		}
 	}
+	.lorem-ipsum-wrapper {
+		.wp-block-group__inner-container,
+		.is-layout-constrained,
+		.wp-block-group-is-layout-constrained {
+			display: flex;
+			flex-direction: row;
+			.lorem-home, .ipsum-home {
+				.wp-block-group__inner-container,
+				.is-layout-constrained, 
+				.wp-block-group-is-layout-constrained {
+					display: flex;
+					flex-direction: column;
+					margin: 0 1rem;
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 68.75rem) {
@@ -100,32 +108,3 @@ body {
 		flex-wrap: nowrap;
 	}
 }
-
-
-// .site-main {
-// 	display: grid;
-// 	grid-template-columns: 1fr minmax(0, 62.5rem) 1fr;
-// 	display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// }
-
-
-// article,
-// div {
-// 	grid-column: 2;
-// }
-
-// .wp-block-image.alignfull.size-full {
-// 	img {
-// 		width: 100%;
-// 	}
-// }
-
-// .wp-block-image.alignfull.size-full {
-//     width: 100%;
-//     max-width: none;
-//     margin-left: 0;
-//     grid-column: 1 / -1;
-// }
-
