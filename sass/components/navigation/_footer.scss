@@ -1,13 +1,13 @@
 .site-footer {
-    background-color: #333;
+    background-color: $color__background-nav;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	margin: 0 auto;
 	justify-content: center;
 	width: 100%;
 
 	h2 {
+		font-family: $font__nav;
 		text-align: center;
 		font-size: 1.75rem;
 		color: #fff;
@@ -22,6 +22,9 @@
 	ul {
 		margin: 0;
 		padding-left: 0;
+		li {
+			margin-bottom: 1rem;
+		}
 	}
 
 	p {
@@ -29,13 +32,17 @@
 	}
 	
 	svg path {
-		fill: #fff;
+		fill: $color__link-hover;
 	}
 
 	svg {
 		padding-top: 1rem;
 	}
 
+	.footer-left {
+		display: flex;
+		align-items: center;
+	}
 
 	.menu-footer-right-container {
 		text-align: center;

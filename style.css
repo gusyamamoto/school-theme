@@ -534,15 +534,16 @@ table {
 }
 
 .table-title {
+	font-size: 1.5rem;
 	text-align: center;
-	margin: 1rem;
+	margin: 2rem 0 1rem;
 }
 
-table {
-	border-collapse: collapse;
-}
 table thead tr {
-	background-color: #c9c9c9;
+	background-color: #2b2b2b;
+	color: #fff;
+	text-align: center;
+	font-size: 1.3rem;
 }
 table tbody tr:nth-child(even) {
 	background-color: #c9c9c9;
@@ -563,7 +564,7 @@ a {
 	text-decoration: none;
 }
 a:visited {
-	color: #800080;
+	color: #2b2b2b;
 }
 a:hover, a:focus, a:active {
 	color: #3d40d1;
@@ -879,15 +880,15 @@ textarea {
 /* Footer
 --------------------------------------------- */
 .site-footer {
-	background-color: #333;
+	background-color: #2b2b2b;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	margin: 0 auto;
 	justify-content: center;
 	width: 100%;
 }
 .site-footer h2 {
+	font-family: "Zilla Slab", sans-serif;
 	text-align: center;
 	font-size: 1.75rem;
 	color: #fff;
@@ -901,14 +902,21 @@ textarea {
 	margin: 0;
 	padding-left: 0;
 }
+.site-footer ul li {
+	margin-bottom: 1rem;
+}
 .site-footer p {
 	color: #fff;
 }
 .site-footer svg path {
-	fill: #fff;
+	fill: #3d40d1;
 }
 .site-footer svg {
 	padding-top: 1rem;
+}
+.site-footer .footer-left {
+	display: flex;
+	align-items: center;
 }
 .site-footer .menu-footer-right-container {
 	text-align: center;
@@ -932,7 +940,7 @@ textarea {
 }
 /* Front Page (home)
 --------------------------------------------- */
-.first-para-home::first-letter {
+.first-para::first-letter {
 	initial-letter: 2;
 	font-weight: bold;
 	margin-right: 0.5rem;
@@ -1073,8 +1081,9 @@ textarea {
 	font-weight: 400;
 }
 
+/* Staff page
+--------------------------------------------- */
 .staff-type {
-	text-decoration: underline;
 	margin-top: 4rem;
 }
 
@@ -1094,6 +1103,14 @@ textarea {
 .blog h2 {
 	font-weight: bold;
 	color: #800080;
+}
+
+.staff-type-wrapper {
+	margin-bottom: 2rem;
+}
+
+.staff-wrapper:first-of-type {
+	border-bottom: 2px solid black;
 }
 
 /* Student page
@@ -1148,6 +1165,10 @@ textarea {
 	margin-right: 2rem;
 }
 
+.attachment-single-student {
+	border-radius: 8px;
+}
+
 /* Posts and pages media query
 --------------------------------------------- */
 @media screen and (min-width: 37.5rem) {
@@ -1169,7 +1190,7 @@ textarea {
 		display: table-row;
 	}
 	table th, table td {
-		padding: 2.5rem;
+		padding: 1.5rem;
 	}
 	.staff-wrapper {
 		display: flex;

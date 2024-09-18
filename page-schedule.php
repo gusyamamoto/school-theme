@@ -34,7 +34,7 @@ get_header();
 
 			if ( function_exists( 'get_field' ) ) {
 				if ( get_field( 'schedule_intro' ) ) {
-					the_field( 'schedule_intro' );
+					?><p class="first-para"><?php the_field( 'schedule_intro' ); ?></p><?php
 				}
 			}
 
