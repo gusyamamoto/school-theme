@@ -7,55 +7,6 @@
 	}
 }
 
-.site-footer {
-    background-color: #333;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0 auto;
-	justify-content: center;
-	width: 100%;
-
-	h2 {
-		text-align: center;
-		font-size: 1.75rem;
-		color: #fff;
-	}
-
-	a {
-		color:#fff;
-		font-weight: bold;
-		text-decoration: none;
-	}
-
-	ul {
-		margin: 0;
-		padding-left: 0;
-	}
-
-	p {
-		color: #fff;
-	}
-	
-	svg path {
-		fill: #fff;
-	}
-
-	svg {
-		padding-top: 1rem;
-	}
-
-
-	.menu-footer-right-container {
-		text-align: center;
-	}
-
-	.credit-links-wrapper {
-		text-align: center;
-	}
-
-}
-
 .widget-area {
 	padding: 2rem;
 	section{
@@ -90,21 +41,4 @@
 	
 }
 
-@media screen and (min-width: 62.5rem) {
-	.site-footer {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		
-		.credit-links-wrapper {
-			text-align: left;
-		}
-	}
-	
-	.menu-footer-right-container {
-		ul {
-			text-align: start;
-		}
-	}
-}
 	

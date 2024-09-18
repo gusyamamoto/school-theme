@@ -2,9 +2,25 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
+/* Footer
+--------------------------------------------- */
+@import "navigation/footer";
+
+/* Front Page (home)
+--------------------------------------------- */
+@import "content/front-page";
+
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
+
+/* Student page
+--------------------------------------------- */
+@import "content/student-page";
+
+/* Posts and pages media query
+--------------------------------------------- */
+@import "content/media-query";
 
 /* Comments
 --------------------------------------------- */
