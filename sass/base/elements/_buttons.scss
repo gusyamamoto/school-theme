@@ -54,6 +54,11 @@
   transform: translate(2px, 2px);
 }
 
+.wp-block-search__button {
+  line-height: 0;
+  margin-top: .5rem;
+}
+
 @media (min-width: 768px) {
   .wp-element-button {
     min-width: 120px;

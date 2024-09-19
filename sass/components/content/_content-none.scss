@@ -1,0 +1,29 @@
+.error-404 {
+    .page-header,
+    p {
+        text-align: center;
+        font-size: 1.5rem;
+        max-width: 40rem;
+        margin: 1rem auto;
+    }
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        text-align: center;
+    }
+    .widget_archive {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .widget_recent_entries {
+        ul, li {
+            margin: 0;
+        }
+    }
+}

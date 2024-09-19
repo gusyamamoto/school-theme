@@ -613,6 +613,11 @@ a:hover, a:active {
 	transform: translate(2px, 2px);
 }
 
+.wp-block-search__button {
+	line-height: 0;
+	margin-top: 0.5rem;
+}
+
 @media (min-width: 768px) {
 	.wp-element-button {
 		min-width: 120px;
@@ -1198,6 +1203,34 @@ textarea {
 		gap: 1.8rem;
 	}
 }
+/* Content none
+--------------------------------------------- */
+.error-404 .page-header,
+.error-404 p {
+	text-align: center;
+	font-size: 1.5rem;
+	max-width: 40rem;
+	margin: 1rem auto;
+}
+.error-404 .page-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.error-404 h2 {
+	text-align: center;
+}
+.error-404 .widget_archive {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.error-404 .widget_recent_entries ul, .error-404 .widget_recent_entries li {
+	margin: 0;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
