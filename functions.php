@@ -59,6 +59,9 @@ function school_theme_setup() {
 	// Cropping to archive type student
 	add_image_size( 'taxonomy-students', 200, 300, true ); 
 
+	// Cropping to blog index
+	add_image_size( 'blog-main', 1000, 300, true ); 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(

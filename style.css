@@ -1205,6 +1205,11 @@ textarea {
 }
 /* Content none
 --------------------------------------------- */
+.error-404 .page-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .error-404 .page-header,
 .error-404 p {
 	text-align: center;
@@ -1212,25 +1217,22 @@ textarea {
 	max-width: 40rem;
 	margin: 1rem auto;
 }
-.error-404 .page-content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.error-404 h2 {
-	text-align: center;
-}
-.error-404 .widget_archive {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.error-404 .widget_recent_entries ul, .error-404 .widget_recent_entries li {
-	margin: 0;
-}
 
+@media screen and (min-width: 37.5em) {
+	.error-404 .error-links {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: center;
+	}
+	.error-404 .error-links ul {
+		margin: 0;
+		padding: 0;
+	}
+	.error-404 .error-links .widget {
+		margin: 1rem;
+	}
+}
 /* Comments
 --------------------------------------------- */
 .comment-content a {

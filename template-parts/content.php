@@ -28,9 +28,19 @@
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php school_theme_post_thumbnail(); ?>
-
+	<?php 
+		if ( is_home() ) {
+			// Display featured image with link to the single post page
+			?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				<?php the_post_thumbnail('blog-main'); ?>
+			</a>
+			<?php
+		} else {
+			// If it's not the home page, just display the featured image
+			the_post_thumbnail();
+		}
+		?>
 	<div class="entry-content">
 		<?php
 
