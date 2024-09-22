@@ -19,7 +19,7 @@
 			<div class="credit-links-wrapper">
 				<div class="credits-section">
 					<h2>Credits</h2>
-					<p><?php esc_html_e( 'Created by ', 'school-theme' ); ?>
+					<p><?php esc_html_e( 'Created by Gustavo Yamamoto, ', 'school-theme' ); ?>
 					<a href="<?php echo esc_url( __( 'https://wp.bcitwebdeveloper.ca/', 'school-theme' ) ); ?>"><?php esc_html_e( 'Beata Kozma & Jonathon Leathers.', 'school-theme' ); ?></a>
 					</p>
 				</div>
