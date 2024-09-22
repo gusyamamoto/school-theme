@@ -1,7 +1,13 @@
-@use "variables" as *;
-@use "typography" as *;
-
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 	font-family: $font__main;
+}
+
+.site-main {
+	max-width: 62.5rem;
+	display: flex;
+	flex-direction: column;
+	margin: 5rem auto 0;
+	padding: 0 1.5rem;
+	position: relative;
 }

@@ -2,3 +2,28 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+.table-title {
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 2rem 0 1rem;
+}
+table {
+	thead tr {
+	background-color: $color__background-nav;
+	color: $color__background-body;	
+	text-align: center;
+	font-size: 1.3rem;
+	}
+	tbody tr:nth-child(even) {
+		background-color: #c9c9c9;
+	}
+	tr {
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+	}
+	th, td {
+			padding: .5rem;
+		}
+}

@@ -57,17 +57,17 @@ get_header();
 						$query = new WP_Query( $args );
 						
 						?>
-						<h2><?php echo esc_html( $term->name ); ?></h2>
+						<h2 class="staff-type"><?php echo esc_html( $term->name ); ?></h2>
 						<?php
 						 
 						if ( $query->have_posts() ) : ?>
-						<article>
+						<article class="staff-wrapper">
 							<?php
 							while ( $query->have_posts() ) :
 								$query->the_post(); 
 								?>
-								<article id='<?php the_ID(); ?>'>
-									<h3><?php the_title(); ?></h3>
+								<article class="staff-type-wrapper" id='<?php the_ID(); ?>'>
+									<h3 class="staff-name"><?php the_title(); ?></h3>
 									<?php
 									if (get_field('biography')) { ?>
 										<p><?php the_field('biography'); ?></p>
@@ -77,12 +77,12 @@ get_header();
 									};
 
 									if (get_field('courses')) { ?>
-										<p>Courses: <?php the_field('courses'); ?></p>
+										<p class="courses-para">Courses: <?php the_field('courses'); ?></p>
 										<?php									
 									};
 
 									if (get_field('website')) { ?>
-										<a href="<?php the_field('website'); ?>">Instructor Website</a>
+										<p class="instructor-site"><a href="<?php the_field('website'); ?>">Instructor Website</a></p>
 										<?php									
 									};
 

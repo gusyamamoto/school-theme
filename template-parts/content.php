@@ -28,25 +28,25 @@
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php school_theme_post_thumbnail(); ?>
-
+	<?php 
+		if ( is_home() ) {
+			?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				<?php the_post_thumbnail('blog-main'); ?>
+			</a>
+			<?php
+		} else {
+			the_post_thumbnail();
+		}
+		?>
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'school-theme' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+
+			if ( is_single() ) {
+				the_content();
+			} else {
+				the_excerpt();
+			}
 
 		wp_link_pages(
 			array(

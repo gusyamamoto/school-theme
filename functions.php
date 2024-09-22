@@ -53,6 +53,15 @@ function school_theme_setup() {
 	// Cropping to Recent News in the Home Page
 	add_image_size( 'recent-news-home', 300, 200, true ); 
 
+	// Cropping to single page (student)
+	add_image_size( 'single-student', 300, 257, true ); 
+	
+	// Cropping to archive type student
+	add_image_size( 'taxonomy-students', 200, 300, true ); 
+
+	// Cropping to blog index
+	add_image_size( 'blog-main', 1000, 300, true ); 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -150,7 +159,7 @@ add_action( 'widgets_init', 'school_theme_widgets_init' );
 function school_theme_scripts() {
 	wp_enqueue_style( 
 		'school-theme-googlefonts', 
-		'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+		'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap',
 		array(),
 		null // Set null if loading multiple Google Fonts from their CDN
 	);
@@ -197,6 +206,15 @@ function modify_taxonomy_title( $title ) {
 add_filter( 'get_the_archive_title', 'modify_taxonomy_title' );
 
 
+add_filter( 'get_the_archive_title', function( $title ) {
+    if ( is_post_type_archive( 'single-school-theme-student-category' ) ) {
+        // Remove the "Archive: " prefix from the title
+        $title = post_type_archive_title( '', false );
+    }
+    return $title;
+});
+
+//Function to delete the word "Archive from Student page
 add_filter( 'get_the_archive_title', function( $title ) {
     if ( is_post_type_archive( 'school-theme-student' ) ) {
         // Remove the "Archive: " prefix from the title

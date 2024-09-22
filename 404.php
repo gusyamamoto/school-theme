@@ -22,7 +22,9 @@ get_header();
 
 					<?php
 					get_search_form();
-
+					?>
+					<section class="error-links"><?php
+				
 					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
@@ -50,7 +52,7 @@ get_header();
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
-
+				</section>
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
 

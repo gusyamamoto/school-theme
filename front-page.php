@@ -32,8 +32,8 @@ get_header();
 						?>
 						<article class="home-recent-news">
 							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail( 'recent-news-home' ) ?>
                 				<h3><?php the_title(); ?></h3>
+								<?php the_post_thumbnail( 'recent-news-home' ) ?>
             				</a>
 						</article>
 						<?php
@@ -41,7 +41,11 @@ get_header();
 					wp_reset_postdata();
 				}
 				?>
-				</div>
+	</div>
+	
+	<div class="see-all-news">
+		<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">See All News</a>
+	</div>
 
 			<?php
 		endwhile; // End of the loop.
